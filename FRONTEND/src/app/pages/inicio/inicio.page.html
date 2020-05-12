@@ -1,0 +1,76 @@
+<ion-header no-border>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-button (click)="toggleMenu()">
+                <ion-icon slot="icon-only" name="menu"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+
+
+        <ion-title color="light">Plataforma SISAV</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+    <ion-list>
+
+        <ion-item *ngFor="let c of componentes | async" [routerLink]="c.redirectTo" detail>
+            <ion-icon slot="start" [name]="c.icon" color="primary"></ion-icon>
+            <ion-label color="primary">{{ c.name }}</ion-label>
+        </ion-item>
+
+    </ion-list>
+    <ion-card mode="ios" color="primary">
+        <ion-card-content>
+            <h4 class=" gray " align="center ">PERIODO EJECUCIÓN 2019</h4>
+        </ion-card-content>
+
+    </ion-card>
+    <ion-card mode="ios">
+        <ion-card-content>
+            ESTADO (PROYECTOS):
+
+        </ion-card-content>
+
+    </ion-card>
+    <ion-card mode="ios" color="secondary">
+        <ion-card-content>
+            Agendar:
+        </ion-card-content>
+
+    </ion-card>
+    <ion-card mode="ios" color="tertiary">
+        <ion-card-content>
+            Aprobados:
+        </ion-card-content>
+
+    </ion-card>
+    <ion-card mode="ios" color="success">
+        <ion-card-content>
+            Ejecución:
+        </ion-card-content>
+
+    </ion-card>
+    <ion-card mode="ios" color="warning">
+        <ion-card-content>
+            Finalizados:
+        </ion-card-content>
+
+    </ion-card>
+    <ion-card mode="ios" color="medium">
+        <ion-card-content>
+            No reaizados:
+        </ion-card-content>
+
+    </ion-card>
+
+</ion-content>
+
+<ion-tabs>
+
+
+</ion-tabs>
+
+<app-piepag></app-piepag>

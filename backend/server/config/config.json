@@ -1,0 +1,26 @@
+{
+    "development": {
+        "username": "node_user2",
+        "password": "123456",
+        "database": "sisav",
+        "host": "127.0.0.1",
+        "dialect": "mysql",
+        "operatorsAliases": false
+    },
+    "test": {
+        "username": "node_user2",
+        "password": "123456",
+        "database": "sisav",
+        "host": "127.0.0.1",
+        "dialect": "mysql",
+        "operatorsAliases": false
+    },
+    "production": {
+        "username": "node_user2",
+        "password": "123456",
+        "database": "sisav",
+        "host": "127.0.0.1",
+        "dialect": "mysql",
+        "operatorsAliases": false
+    }
+}
