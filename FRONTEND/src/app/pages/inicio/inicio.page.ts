@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { Componente } from '../../interfaces/interfaces';
-import { DataService } from '../../services/data.service'; /*agregado*/
+import { DataService } from '../../services/data.service'; /*agregado*//*agregado*/ /*agregado*/ /*agregado*/
 import { pruebas } from '../../../../../backend/server/routes/prueba'; /*agregado*/ /*agregado*/ /*agregado*/ /*agregado*/
 
 @Component({
