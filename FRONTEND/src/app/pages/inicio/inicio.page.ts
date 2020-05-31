@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { Componente } from '../../interfaces/interfaces';
 import { DataService } from '../../services/data.service'; /*agregado*/
-import { pruebas } from '../../../../../backend/server/routes/prueba'; /*agregado*/
+import { pruebas } from '../../../../../backend/server/routes/prueba'; /*agregado*/ /*agregado*/ /*agregado*/ /*agregado*/
 
 @Component({
   selector: 'app-inicio',
@@ -18,7 +18,7 @@ export class InicioPage implements OnInit {
 
   ngOnInit() {
   }
-  getprueba() /*agregado*/{
+  getprueba() /*agregadokkk*/{
     this._servicePrueba.getPrueba();
     /*.then(response => {
       this.prueba = response.prueba;
