@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Componente } from '../interfaces/interfaces';
+import { Pruebas } from '../models/prueba';
 import { GLOBAL } from './global'; /*agregado*/
 
 
@@ -17,7 +18,8 @@ export class DataService {
     }
 
 getPrueba()/*agregado*/ {
-  return this.http.get(this.url + 'prueba').toPromise().then(res => res);
+  return this.http.get<Pruebas[]>(this.url + 'prueba').toPromise()
+  .then(res => res);
 }
 
 

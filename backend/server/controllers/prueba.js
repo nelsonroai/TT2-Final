@@ -2,8 +2,11 @@ const prueba = require('../models').prueba;
 
 
 function cacaca(req, res) {
+
     prueba.findAll()
-        .then(pruebas => {
+
+    .then(pruebas => {
+            console.log(pruebas);
             res.status(200).send({ pruebas });
         })
         .catch(err => {
