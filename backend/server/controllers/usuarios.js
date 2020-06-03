@@ -12,7 +12,7 @@ function create(req, res) {
         });
 }
 
-function getAll(req, res) {
+function busquedaporrut(req, res) {
     const params = req.body;
     const cod_rut = params.cod_rut;
 
@@ -28,7 +28,31 @@ function getAll(req, res) {
         });
 }
 
+function login(req, res) {
+
+    usuario.findOne({
+            where: {
+                cod_rut: req.body.cod_rut,
+                password: req.body.password
+            }
+        })
+        .then(usuarios => {
+            if (usuarios) {
+                res.status(200).send({ usuarios });
+            } else {
+                res.status(401).send({ message: "Usuario y/o contraseña incorrectos" });
+            }
+
+
+        })
+        .catch(err => {
+            res.status(500).send({ message: "Ocurro un error al buscar los usuarios" });
+
+        });
+}
+
 module.exports = {
     create,
-    getAll
+    busquedaporrut,
+    login
 };
