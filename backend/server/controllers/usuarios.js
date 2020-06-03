@@ -1,4 +1,4 @@
-const usuario = require('../models').usuario;
+const usuario = require('../models').usuarios;
 //const jwt = require('../services/jws');
 
 function create(req, res) {
@@ -51,8 +51,36 @@ function login(req, res) {
         });
 }
 
+function update(req, res) {
+
+    var cod_rut = req.params.cod_rut;
+    var body = req.body;
+
+    usuario.findOne({
+            where: {
+                cod_rut: cod_rut,
+            }
+
+        })
+        .then(usuarios => {
+            console.log(body);
+            usuarios.update(body)
+                .then(() => {
+                    res.status(200).send({ usuarios });
+                })
+                .catch(err => {
+                    res.status(500).send({ message: "Error al actualizar la el usuario" });
+                });
+        })
+        .catch(err => {
+            res.status(500).send({ message: "Errorrrrrrrrrrrrrr" });
+
+        });
+}
+
 module.exports = {
     create,
     busquedaporrut,
-    login
+    login,
+    update
 };

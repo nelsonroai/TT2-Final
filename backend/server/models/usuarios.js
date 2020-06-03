@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const usuarios = sequelize.define('usuario', {
+    const usuarios = sequelize.define('usuarios', {
         cod_rut: {
 
             primaryKey: true,

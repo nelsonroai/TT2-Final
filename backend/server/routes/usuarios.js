@@ -7,7 +7,7 @@ module.exports = (app) => {
     app.post('/api/usuario', usuariosController.create);
     app.get('/api/busquedaporrut', usuariosController.busquedaporrut);
     app.post('/api/login', usuariosController.login);
-
+    app.put('/api/act/:cod_rut', usuariosController.update);
 
 
 
