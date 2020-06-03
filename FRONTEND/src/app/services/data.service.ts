@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Componente } from '../interfaces/interfaces';
-import { Pruebas } from '../models/prueba';
-import { GLOBAL } from './global'; /*agregado*/
+
 
 
 
@@ -12,10 +11,7 @@ import { GLOBAL } from './global'; /*agregado*/
 export class DataService {
 
   private url: string;
-  constructor(  private http: HttpClient) {
-    this.url = GLOBAL.url; /*agregado*/
-
-    }
+  constructor(  private http: HttpClient) { }
 
 getPrueba()/*agregado*/ {
   return this.http.get(`http://localhost:8010/api/prueba`);
