@@ -18,8 +18,7 @@ export class DataService {
     }
 
 getPrueba()/*agregado*/ {
-  return this.http.get<Pruebas[]>(this.url + '/prueba').toPromise()
-  .then(res => res);
+  return this.http.get(`http://localhost:8010/api/prueba`);
 }
 
 
