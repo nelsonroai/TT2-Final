@@ -18,7 +18,7 @@ export class DataService {
     }
 
 getPrueba()/*agregado*/ {
-  return this.http.get<Pruebas[]>(this.url + 'prueba').toPromise()
+  return this.http.get<Pruebas[]>(this.url + '/prueba').toPromise()
   .then(res => res);
 }
 

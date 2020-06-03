@@ -11,61 +11,29 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
-
-    <ion-list>
-
-        <ion-item *ngFor="let c of componentes | async" [routerLink]="c.redirectTo" detail>
-            <ion-icon slot="start" [name]="c.icon" color="primary"></ion-icon>
-            <ion-label color="primary">{{ c.name }}</ion-label>
+<ion-card mode="ios">
+    <ion-card-content>
+        <ion-item *ngFor="let user of users">
+            <ion-avatar item-start>
+                <img [src]="user.picture.medium">
+            </ion-avatar>
+            <h2>{{ user.name.first | uppercase }}</h2>
+            <p>{{ user.email }}</p>
         </ion-item>
+    </ion-card-content>
 
+</ion-card>
+
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let user of users">
+            <ion-avatar item-start>
+                <img [src]="user.picture.medium">
+            </ion-avatar>
+            <h2>{{ user.name.first | uppercase }}</h2>
+            <p>{{ user.email }}</p>
+        </ion-item>
     </ion-list>
-    <ion-card mode="ios" color="primary">
-        <ion-card-content>
-            <h4 class=" gray " align="center ">PERIODO EJECUCIÓN 2019</h4>
-        </ion-card-content>
-
-    </ion-card>
-    <ion-card mode="ios">
-        <ion-card-content>
-            ESTADO (PROYECTOS):
-
-        </ion-card-content>
-
-    </ion-card>
-    <ion-card mode="ios" color="secondary">
-        <ion-card-content>
-            Agendar:
-        </ion-card-content>
-
-    </ion-card>
-    <ion-card mode="ios" color="tertiary">
-        <ion-card-content>
-            Aprobados:
-        </ion-card-content>
-
-    </ion-card>
-    <ion-card mode="ios" color="success">
-        <ion-card-content>
-            Ejecución:
-        </ion-card-content>
-
-    </ion-card>
-    <ion-card mode="ios" color="warning">
-        <ion-card-content>
-            Finalizados:
-        </ion-card-content>
-
-    </ion-card>
-    <ion-card mode="ios" color="medium">
-        <ion-card-content>
-            No reaizados:
-        </ion-card-content>
-
-    </ion-card>
-
 </ion-content>
 
 <ion-tabs>
