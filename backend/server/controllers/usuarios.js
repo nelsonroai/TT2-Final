@@ -28,6 +28,17 @@ function busquedaporrut(req, res) {
         });
 }
 
+function listarusuarios(req, res) {
+
+    usuario.findAll()
+        .then(usuarios => {
+            res.status(200).send({ usuarios });
+        })
+        .catch(err => {
+            res.status(500).send({ message: "Ocurro un error al listar los usuarios" });
+        });
+}
+
 function login(req, res) {
 
     usuario.findOne({
@@ -42,8 +53,6 @@ function login(req, res) {
             } else {
                 res.status(401).send({ message: "Usuario y/o contraseña incorrectos" });
             }
-
-
         })
         .catch(err => {
             res.status(500).send({ message: "Ocurro un error al buscar los usuarios" });
@@ -61,7 +70,6 @@ function update(req, res) {
             }
         })
         .then(usuarios => {
-
             usuarios.update(body)
                 .then(() => {
                     res.status(200).send({ usuarios });
@@ -79,5 +87,6 @@ module.exports = {
     create,
     busquedaporrut,
     login,
-    update
+    update,
+    listarusuarios
 };

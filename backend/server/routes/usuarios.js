@@ -4,10 +4,11 @@ const usuariosController = require('../controllers').usuarios;
 
 
 module.exports = (app) => {
-    app.post('/api/usuario', usuariosController.create);
-    app.get('/api/busquedaporrut', usuariosController.busquedaporrut);
-    app.post('/api/login', usuariosController.login);
-    app.put('/api/act/:cod_rut', usuariosController.update);
+    app.post('/api/usuario', usuariosController.create); //crea un nuevo usuario
+    app.get('/api/listusuarios', usuariosController.listarusuarios); //muestra todos los usuarios
+    app.get('/api/busquedaporrut', usuariosController.busquedaporrut); //busca segun el rut ingresado todos los datos del usuario
+    app.post('/api/login', usuariosController.login); //para e acceso, login
+    app.put('/api/actUsuario/:cod_rut', usuariosController.update); // editar usuario ya existente, ingresando el rut
 
 
 

@@ -108,8 +108,8 @@ module.exports = (sequelize, DataTypes) => {
         n_personas_sc: DataTypes.INTEGER,
         tc_dd: DataTypes.INTEGER,
         tc_de: DataTypes.INTEGER,
-        informe_gestion_prosp: DataTypes.INTEGER,
-        usuario_creacion: DataTypes.STRING
+        informe_gestion_prosp: DataTypes.INTEGER
+            /*usuario_creacion: DataTypes.STRING*/
             //createdAt: DataTypes.DATE,
             //updatedAt: DataTypes.DATE
     }, {

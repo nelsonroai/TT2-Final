@@ -26,7 +26,18 @@ export class InicioPage implements OnInit {
     .subscribe(resp => {
       console.log('prueba', resp);
     });
+    this.dataservice.getUsuario()
+    .subscribe(resp => {
+      console.log('listusuarios', resp);
+    });
 
+  }
+
+  listarusuario() {
+    this.dataservice.getUsuario()
+    .subscribe(resp => {
+      console.log('listusuarios', resp);
+    });
   }
 
   toggleMenu() {

@@ -17,6 +17,10 @@ getPrueba()/*agregado*/ {
   return this.http.get(`http://localhost:8010/api/prueba`);
 }
 
+getUsuario() {
+  return this.http.get(`http://localhost:8010/api/listusuarios`);
+}
+
 
 
 getMenuOpts() {
