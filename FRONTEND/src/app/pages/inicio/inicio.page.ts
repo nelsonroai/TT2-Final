@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
-import { Componente } from '../../interfaces/interfaces';
+import { Componente, Row } from '../../interfaces/interfaces';
 import { DataService } from '../../services/data.service'; /*agregado*//*agregado*/ /*agregado*/ /*agregado*/
 
 
@@ -14,6 +14,7 @@ import { DataService } from '../../services/data.service'; /*agregado*//*agregad
 export class InicioPage implements OnInit {
   componentes: Componente[] = [];
   users: any[] = [];
+  proye: Row[] = [];
 
   constructor(
     private menuCtrl: MenuController,
@@ -29,6 +30,11 @@ export class InicioPage implements OnInit {
     this.dataservice.getUsuario()
     .subscribe(resp => {
       console.log('listusuarios', resp);
+    });
+    this.dataservice.getProyecto()
+    .subscribe(resp  => {
+      console.log('listproyects', resp);
+      this.proye.push(...resp.proyectos.rows);
     });
 
   }

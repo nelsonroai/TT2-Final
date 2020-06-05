@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Componente } from '../interfaces/interfaces';
+import { Componente, RootObject } from '../interfaces/interfaces';
 
 
 
@@ -20,7 +20,9 @@ getPrueba()/*agregado*/ {
 getUsuario() {
   return this.http.get(`http://localhost:8010/api/listusuarios`);
 }
-
+getProyecto() {
+  return this.http.get<RootObject>(`http://localhost:8010/api/listproyects`);
+}
 
 
 getMenuOpts() {

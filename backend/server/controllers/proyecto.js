@@ -14,7 +14,13 @@ function create(req, res) {
 
 function listarproyectos(req, res) {
 
-    proyecto.findAndCountAll({ limit: 3 })
+    proyecto.findAndCountAll({
+            order: [
+                ['cod_proyecto', 'DESC']
+            ],
+            limit: 10
+
+        })
         .then(proyectos => {
             res.status(200).send({ proyectos });
         })
