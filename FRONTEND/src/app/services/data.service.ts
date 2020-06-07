@@ -23,6 +23,9 @@ getUsuario() {
 getProyecto() {
   return this.http.get<RootObject>(`http://localhost:8010/api/listproyects`);
 }
+getProyectoEjecucion() {
+  return this.http.get<RootObject>(`http://localhost:8010/api/listproyectsejecucion`);
+}
 
 
 getMenuOpts() {

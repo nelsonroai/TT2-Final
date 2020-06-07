@@ -6,26 +6,10 @@
 
 
 
-<ion-content padding>
-
-
-
-    <ion-card mode="ios" color="primary">
+<ion-content>
+    <ion-card mode="ios" color="tertiary">
         <ion-card-content>
-            <h4 class=" gray " align="center ">PROPUESTA PROTECTOS AÑO 2020</h4>
-        </ion-card-content>
-
-    </ion-card>
-    <ion-card mode="ios">
-        <ion-card-content>
-            ESTADO (PROYECTOS):
-
-        </ion-card-content>
-
-    </ion-card>
-    <ion-card mode="ios" color="medium">
-        <ion-card-content>
-            Agendar:
+            Aprobados:
         </ion-card-content>
 
     </ion-card>
@@ -35,26 +19,40 @@
         </ion-card-content>
 
     </ion-card>
-    <ion-card mode="ios" color="success">
-        <ion-card-content>
-            Ejecución:
-        </ion-card-content>
+    <ion-list>
+        <ion-item>
+            <ion-label text-center>
+                <h3>Codigo</h3>
+            </ion-label>
+            <ion-label text-center>
+                <h3>Prog VcM</h3>
+            </ion-label>
+            <ion-label text-center>
+                <h3>Estado</h3>
+            </ion-label>
+            <ion-label text-center>
+                <h3>Comp</h3>
+            </ion-label>
+        </ion-item>
+        <ion-item *ngFor="let p of proye">
+            <ion-label text-center>
 
-    </ion-card>
-    <ion-card mode="ios" color="warning">
-        <ion-card-content>
-            Finalizados:
-        </ion-card-content>
+                <p>{{p.cod_proyecto}}</p>
 
-    </ion-card>
-    <ion-card mode="ios" color="medium">
-        <ion-card-content>
-            No realizados:
-        </ion-card-content>
-
-    </ion-card>
-
+            </ion-label>
+            <ion-label text-center>
+                <p>{{p.nom_proyecto}}</p>
+            </ion-label>
+            <ion-label text-center>
+                <p>{{p.cod_estado}}</p>
+            </ion-label>
+            <ion-label text-center>
+                <p></p>
+            </ion-label>
+        </ion-item>
+    </ion-list>
 </ion-content>
+
 
 <ion-tabs>
 

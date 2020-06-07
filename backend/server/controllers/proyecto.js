@@ -15,20 +15,42 @@ function create(req, res) {
 function listarproyectos(req, res) {
 
     proyecto.findAndCountAll({
+            where: {
+                tipo_proy: [4, 5]
+            },
             order: [
                 ['cod_proyecto', 'DESC']
             ],
             limit: 10
-
         })
         .then(proyectos => {
             res.status(200).send({ proyectos });
         })
         .catch(err => {
             res.status(500).send({ err });
-
         });
 }
+
+function listarproyectosenejecucion(req, res) {
+
+    proyecto.findAndCountAll({
+            where: {
+                tipo_proy: [4, 5],
+                cod_estado: 6
+            },
+            order: [
+                ['cod_proyecto', 'DESC']
+            ],
+            limit: 10
+        })
+        .then(proyectos => {
+            res.status(200).send({ proyectos });
+        })
+        .catch(err => {
+            res.status(500).send({ err });
+        });
+}
+
 
 function update(req, res) {
 
@@ -56,5 +78,6 @@ function update(req, res) {
 module.exports = {
     create,
     listarproyectos,
-    update
+    update,
+    listarproyectosenejecucion
 };
