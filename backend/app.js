@@ -23,6 +23,6 @@ require('./server/routes/proyecto')(app);
 
 
 app.get('*', (req, res) => {
-    res.status(200).send({ message: "Bienvenido al servidor NodeJS" });
+    res.status(200).send({ message: "Bienvenido al servidor del roa realizado en NodeJS" });
 });
 module.exports = app;
