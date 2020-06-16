@@ -12,7 +12,8 @@ export class ListaprogramasPage implements OnInit {
   componentes: Componente[] = [];
   users: any[] = [];
   proye: Row[] = [];
-  coun: any[] = [];
+  countejecucion: any[] = [];
+  countaprobados: any[] = [];
 
   constructor(
     private menuCtrl: MenuController,
@@ -25,10 +26,15 @@ export class ListaprogramasPage implements OnInit {
       console.log('listprogramas', resp);
       this.proye.push(...resp.proyectos.rows);
     });
-    this.dataservice.getcountProgramaejecucion()
+    this.dataservice.getcountProgramasejecucion()
     .subscribe(resp  => {
       console.log('countprogramasejecucion', resp);
-      this.coun.push(resp.proyectos.count);
+      this.countejecucion.push(resp.proyectos.count);
+    });
+    this.dataservice.getcountProgramasaprobados()
+    .subscribe(resp  => {
+      console.log('countprogramasaprobados', resp);
+      this.countaprobados.push(resp.proyectos.count);
     });
   }
 

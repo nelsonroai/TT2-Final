@@ -5,13 +5,13 @@
 
 <ion-content>
 
-    <ion-card mode="ios" color="success">
+    <ion-card mode="ios" color="success" *ngFor="let c of countaprobados">
         <ion-card-content>
-            Aprobados:
+            Aprobados: {{c}}
         </ion-card-content>
     </ion-card>
 
-    <ion-card mode="ios" color="tertiary" *ngFor="let c of coun">
+    <ion-card mode="ios" color="tertiary" *ngFor="let c of countejecucion">
         <ion-card-content>
             Ejecución: {{c}}
         </ion-card-content>

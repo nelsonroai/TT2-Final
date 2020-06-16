@@ -17,10 +17,13 @@ getPrueba()/*agregado*/ {
 getUsuario() {
   return this.http.get(`http://localhost:8010/api/listusuarios`);
 }
-
-
-getcountProgramaejecucion() {
+getcountProgramasejecucion() {
   return this.http.get<RootObject>(`http://localhost:8010/api/countprogramasejecucion`);
+  }
+
+
+getcountProgramasaprobados() {
+  return this.http.get<RootObject>(`http://localhost:8010/api/countprogramasaprobados`);
   }
 
 

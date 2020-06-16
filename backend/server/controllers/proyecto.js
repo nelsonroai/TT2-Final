@@ -96,10 +96,32 @@ function NumProgramasEjecucion(req, res) {
         });
 }
 
+function NumProgramasAprobados(req, res) {
+    proyecto.findAndCountAll({
+            where: {
+                tipo_proy: [4, 5],
+                cod_estado: 5
+            },
+            attributes: [
+
+                proyecto.sequelize.fn('count',
+                    proyecto.sequelize.col('cod_estado')
+                )
+
+            ]
+        }).then(proyectos => {
+            res.status(200).send({ proyectos });
+        })
+        .catch(err => {
+            res.status(500).send({ err });
+        });
+}
+
 module.exports = {
     create,
     listarprogramas,
     update,
     listarprogramasejecucion,
-    NumProgramasEjecucion
+    NumProgramasEjecucion,
+    NumProgramasAprobados
 };

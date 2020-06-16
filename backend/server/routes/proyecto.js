@@ -10,7 +10,8 @@ module.exports = (app) => {
     app.get('/api/listprogramasejecucion', proyectoController.listarprogramasejecucion); // Listar proyectos en ejecucion
     app.post('/api/crearproyecto', proyectoController.create); //Crea nuevo proyecto
     app.put('/api/actProyecto/:cod_proyecto', proyectoController.update); //editar proyecto ya existente ingresando el codigo del proyecto. Si no existe no puede actualizar
-    app.get('/api/countprogramasejecucion', proyectoController.NumProgramasEjecucion);
+    app.get('/api/countprogramasejecucion', proyectoController.NumProgramasEjecucion); //Cantidad de programas en ejecucion
+    app.get('/api/countprogramasaprobados', proyectoController.NumProgramasAprobados); //Cantidad de programas aprobados
     //app.post('/api/login', usuariosController.login);
     //app.get('/api/proyectos', usuariosController.getAll);
 
