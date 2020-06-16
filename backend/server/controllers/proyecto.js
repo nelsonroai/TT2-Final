@@ -12,7 +12,7 @@ function create(req, res) {
 }
 
 
-function listarproyectos(req, res) {
+function listarprogramas(req, res) {
 
     proyecto.findAndCountAll({
             where: {
@@ -31,7 +31,7 @@ function listarproyectos(req, res) {
         });
 }
 
-function listarproyectosenejecucion(req, res) {
+function listarprogramasejecucion(req, res) {
 
     proyecto.findAndCountAll({
             where: {
@@ -75,9 +75,31 @@ function update(req, res) {
         });
 }
 
+function NumProgramasEjecucion(req, res) {
+    proyecto.findAndCountAll({
+            where: {
+                tipo_proy: [4, 5],
+                cod_estado: 6
+            },
+            attributes: [
+
+                proyecto.sequelize.fn('count',
+                    proyecto.sequelize.col('cod_estado')
+                )
+
+            ]
+        }).then(proyectos => {
+            res.status(200).send({ proyectos });
+        })
+        .catch(err => {
+            res.status(500).send({ err });
+        });
+}
+
 module.exports = {
     create,
-    listarproyectos,
+    listarprogramas,
     update,
-    listarproyectosenejecucion
+    listarprogramasejecucion,
+    NumProgramasEjecucion
 };

@@ -19,9 +19,9 @@ export class EjecucionprogramasPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.dataservice.getProyectoEjecucion()
+    this.dataservice.getProgramasEjecucion()
     .subscribe(resp  => {
-      console.log('listproyectsejecucion', resp);
+      console.log('listprogramasejecucion', resp);
       this.proye.push(...resp.proyectos.rows);
     });
   }

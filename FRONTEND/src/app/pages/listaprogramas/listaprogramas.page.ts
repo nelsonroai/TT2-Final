@@ -12,6 +12,7 @@ export class ListaprogramasPage implements OnInit {
   componentes: Componente[] = [];
   users: any[] = [];
   proye: Row[] = [];
+  coun: any[] = [];
 
   constructor(
     private menuCtrl: MenuController,
@@ -19,10 +20,15 @@ export class ListaprogramasPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.dataservice.getProyecto()
+    this.dataservice.getProgramas()
     .subscribe(resp  => {
-      console.log('listproyects', resp);
+      console.log('listprogramas', resp);
       this.proye.push(...resp.proyectos.rows);
+    });
+    this.dataservice.getcountProgramaejecucion()
+    .subscribe(resp  => {
+      console.log('countprogramasejecucion', resp);
+      this.coun.push(resp.proyectos.count);
     });
   }
 

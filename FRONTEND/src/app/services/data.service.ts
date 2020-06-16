@@ -3,8 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Componente, RootObject } from '../interfaces/interfaces';
 
 
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -16,18 +14,22 @@ export class DataService {
 getPrueba()/*agregado*/ {
   return this.http.get(`http://localhost:8010/api/prueba`);
 }
-
 getUsuario() {
   return this.http.get(`http://localhost:8010/api/listusuarios`);
 }
-getProyecto() {
-  return this.http.get<RootObject>(`http://localhost:8010/api/listproyects`);
-}
-getProyectoEjecucion() {
-  return this.http.get<RootObject>(`http://localhost:8010/api/listproyectsejecucion`);
-}
 
 
+getcountProgramaejecucion() {
+  return this.http.get<RootObject>(`http://localhost:8010/api/countprogramasejecucion`);
+  }
+
+
+getProgramas() {
+  return this.http.get<RootObject>(`http://localhost:8010/api/listprogramas`);
+}
+getProgramasEjecucion() {
+  return this.http.get<RootObject>(`http://localhost:8010/api/listprogramasejecucion`);
+}
 getMenuOpts() {
   return this.http.get<Componente[]>('/assets/data/menu.json');
   }

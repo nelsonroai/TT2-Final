@@ -23,29 +23,7 @@ export class InicioPage implements OnInit {
 
 
   ngOnInit() {
-    this.dataservice.getPrueba()
-    .subscribe(resp => {
-      console.log('prueba', resp);
-    });
-    this.dataservice.getUsuario()
-    .subscribe(resp => {
-      console.log('listusuarios', resp);
-    });
-    this.dataservice.getProyecto()
-    .subscribe(resp  => {
-      console.log('listproyects', resp);
-      this.proye.push(...resp.proyectos.rows);
-    });
-
   }
-
-  listarusuario() {
-    this.dataservice.getUsuario()
-    .subscribe(resp => {
-      console.log('listusuarios', resp);
-    });
-  }
-
   toggleMenu() {
     this.menuCtrl.toggle();
   }
