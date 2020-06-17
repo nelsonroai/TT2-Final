@@ -12,6 +12,8 @@ export class EjecucionprogramasPage implements OnInit {
   componentes: Componente[] = [];
   users: any[] = [];
   proye: Row[] = [];
+  countejecucion: any[] = [];
+  countaprobados: any[] = [];
 
   constructor(
     private menuCtrl: MenuController,
@@ -23,6 +25,16 @@ export class EjecucionprogramasPage implements OnInit {
     .subscribe(resp  => {
       console.log('listprogramasejecucion', resp);
       this.proye.push(...resp.proyectos.rows);
+    });
+    this.dataservice.getcountProgramasejecucion()
+    .subscribe(resp  => {
+      console.log('countprogramasejecucion', resp);
+      this.countejecucion.push(resp.proyectos.count);
+    });
+    this.dataservice.getcountProgramasaprobados()
+    .subscribe(resp  => {
+      console.log('countprogramasaprobados', resp);
+      this.countaprobados.push(resp.proyectos.count);
     });
   }
 
