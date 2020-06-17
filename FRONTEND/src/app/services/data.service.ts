@@ -20,10 +20,16 @@ getUsuario() {
 getcountProgramasejecucion() {
   return this.http.get<RootObject>(`http://localhost:8010/api/countprogramasejecucion`);
   }
-
-
 getcountProgramasaprobados() {
   return this.http.get<RootObject>(`http://localhost:8010/api/countprogramasaprobados`);
+  }
+
+getcountTotalejecucion() {
+  return this.http.get<RootObject>(`http://localhost:8010/api/counttotalejecucion`);
+  }
+
+getcountTotalaprobados() {
+  return this.http.get<RootObject>(`http://localhost:8010/api/counttotalaprobados`);
   }
 
 

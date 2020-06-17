@@ -15,6 +15,8 @@ export class InicioPage implements OnInit {
   componentes: Componente[] = [];
   users: any[] = [];
   proye: Row[] = [];
+  counttotalejecucion: any[] = [];
+  counttotalaprobado: any[] = [];
 
   constructor(
     private menuCtrl: MenuController,
@@ -23,6 +25,16 @@ export class InicioPage implements OnInit {
 
 
   ngOnInit() {
+    this.dataservice.getcountTotalejecucion()
+    .subscribe(resp  => {
+      console.log('counttotalejecucion', resp);
+      this.counttotalejecucion.push(resp.proyectos.count);
+    });
+    this.dataservice.getcountTotalaprobados()
+    .subscribe(resp  => {
+      console.log('counttotalaprobados', resp);
+      this.counttotalaprobado.push(resp.proyectos.count);
+    });
   }
   toggleMenu() {
     this.menuCtrl.toggle();

@@ -12,6 +12,8 @@ module.exports = (app) => {
     app.put('/api/actProyecto/:cod_proyecto', proyectoController.update); //editar proyecto ya existente ingresando el codigo del proyecto. Si no existe no puede actualizar
     app.get('/api/countprogramasejecucion', proyectoController.NumProgramasEjecucion); //Cantidad de programas en ejecucion
     app.get('/api/countprogramasaprobados', proyectoController.NumProgramasAprobados); //Cantidad de programas aprobados
+    app.get('/api/counttotalejecucion', proyectoController.NumTotalEjecucion);
+    app.get('/api/counttotalaprobados', proyectoController.NumTotalAprobados);
     //app.post('/api/login', usuariosController.login);
     //app.get('/api/proyectos', usuariosController.getAll);
 
