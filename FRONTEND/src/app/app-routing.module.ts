@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'inicio', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'inicio', loadChildren: './pages/inicio/inicio.module#InicioPageModule' },
   { path: 'listaproyectos', loadChildren: './pages/listaproyectos/listaproyectos.module#ListaproyectosPageModule' },
   { path: 'ejecucionproyectos', loadChildren: './pages/ejecucionproyectos/ejecucionproyectos.module#EjecucionproyectosPageModule' },
@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'financiamiento', loadChildren: './pages/financiamiento/financiamiento.module#FinanciamientoPageModule' },
   { path: 'card', loadChildren: './pages/card/card.module#CardPageModule' },
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
-  { path: 'tabs', loadChildren: './pages/tabs/tabs.module#TabsPageModule' }
+  { path: 'main', loadChildren: './pages/tabs/tabs.module#TabsPageModule' }
 ];
 
 @NgModule({
