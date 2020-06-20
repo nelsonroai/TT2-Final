@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
   selector: 'app-login',
@@ -42,15 +43,21 @@ export class LoginPage implements OnInit {
       seleccionado: false
     },
 ];
-  constructor() { }
+
+loginUser = {
+  cod_rut: 18367582,
+  password: 'pepito'
+};
+
+constructor( private usuarioService: UsuarioService) { }
 
   ngOnInit() {
 
   }
   login( fLogin: NgForm) {
-    console.log(fLogin.valid);
-  }
-  registro(fRegistro: NgForm) {
-    console.log(fRegistro.valid);
+    if (fLogin.invalid) {
+      return;
+    }
+    this.usuarioService.login(this.loginUser.cod_rut, this.loginUser.password);
   }
 }
