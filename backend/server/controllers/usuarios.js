@@ -50,14 +50,19 @@ function login(req, res) {
             if (usuarios) {
                 if (req.body.token) {
                     res.status(200).send({
+                        ok: true,
                         token: jwt.createToken(usuarios)
+
                     });
                 } else {
                     res.status(200).send({
-                        usuarios: usuarios
+                        /*usuarios: usuarios*/
+                        ok: true,
+                        token: jwt.createToken(usuarios)
                     });
                 }
             } else {
+
                 res.status(401).send({ message: "Usuario y/o contraseña incorrectos" });
             }
         })

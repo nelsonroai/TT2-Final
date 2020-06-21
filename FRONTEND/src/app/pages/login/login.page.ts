@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UsuarioService } from '../../services/usuario.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -9,55 +10,30 @@ import { UsuarioService } from '../../services/usuario.service';
 })
 export class LoginPage implements OnInit {
 
-  avatars = [
-    {
-      img: 'av-1.png',
-      seleccionado: true
-    },
-    {
-      img: 'av-2.png',
-      seleccionado: false
-    },
-    {
-      img: 'av-3.png',
-      seleccionado: false
-    },
-    {
-      img: 'av-4.png',
-      seleccionado: false
-    },
-    {
-      img: 'av-5.png',
-      seleccionado: false
-    },
-    {
-      img: 'av-6.png',
-      seleccionado: false
-    },
-    {
-      img: 'av-7.png',
-      seleccionado: false
-    },
-    {
-      img: 'av-8.png',
-      seleccionado: false
-    },
-];
+
 
 loginUser = {
   cod_rut: 18367582,
   password: 'pepito'
 };
 
-constructor( private usuarioService: UsuarioService) { }
+constructor( private usuarioService: UsuarioService, private navCtrl: NavController) { }
 
   ngOnInit() {
 
   }
-  login( fLogin: NgForm) {
+ async login( fLogin: NgForm) {
+
     if (fLogin.invalid) {
       return;
     }
-    this.usuarioService.login(this.loginUser.cod_rut, this.loginUser.password);
+
+    const valido = await this.usuarioService.login(this.loginUser.cod_rut, this.loginUser.password);
+
+    if (valido) {
+      this.navCtrl.navigateRoot('/inicio');
+    } else {
+      /*contraseña no correcta*/
+    }
   }
 }
