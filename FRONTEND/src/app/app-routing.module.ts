@@ -14,7 +14,11 @@ const routes: Routes = [
   { path: 'financiamiento', loadChildren: './pages/financiamiento/financiamiento.module#FinanciamientoPageModule' },
   { path: 'card', loadChildren: './pages/card/card.module#CardPageModule' },
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
-  { path: 'main', loadChildren: './pages/tabs/tabs.module#TabsPageModule' }
+  { path: 'main', loadChildren: './pages/tabs/tabs.module#TabsPageModule' },
+  { path: 'iniciativas', loadChildren: './pages/iniciativas/iniciativas.module#IniciativasPageModule' },
+  { path: 'listainiciativas', loadChildren: './pages/listainiciativas/listainiciativas.module#ListainiciativasPageModule' },
+  { path: 'listapoa', loadChildren: './pages/listapoa/listapoa.module#ListapoaPageModule' },
+  { path: 'ejecucionpoa', loadChildren: './pages/ejecucionpoa/ejecucionpoa.module#EjecucionpoaPageModule' }
 ];
 
 @NgModule({

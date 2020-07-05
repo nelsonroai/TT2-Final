@@ -1,12 +1,12 @@
 [{
         "icon": "md-paper-plane",
-        "name": "Lista Proyectos",
-        "redirectTo": "/listaproyectos"
+        "name": "Lista Iniciativas VcM",
+        "redirectTo": ""
     },
     {
         "icon": "md-paper-plane",
-        "name": "Ejecucion Proyectos 2019",
-        "redirectTo": "/ejecucionproyectos"
+        "name": "Ejecucion Iniciativas 2020",
+        "redirectTo": ""
     },
     {
         "icon": "ios-paper",
@@ -15,8 +15,18 @@
     },
     {
         "icon": "ios-paper",
-        "name": "Ejecucion Programas 2019",
+        "name": "Ejecucion Programas 2020",
         "redirectTo": "/ejecucionprogramas"
+    },
+    {
+        "icon": "md-paper-plane",
+        "name": "Lista UET",
+        "redirectTo": "/listaproyectos"
+    },
+    {
+        "icon": "md-paper-plane",
+        "name": "Ejecucion UET 2020",
+        "redirectTo": "/ejecucionproyectos"
     },
     {
         "icon": "md-list",
@@ -25,22 +35,27 @@
     },
     {
         "icon": "md-list",
-        "name": "Ejecucion Extensión 2019",
+        "name": "Ejecucion Extensión 2020",
         "redirectTo": "/ejecucionextension"
     },
     {
+        "icon": "md-paper-plane",
+        "name": "Lista POA",
+        "redirectTo": ""
+    },
+    {
+        "icon": "md-paper-plane",
+        "name": "Ejecucion POA 2020",
+        "redirectTo": ""
+    },
+    {
         "icon": "md-settings",
-        "name": "Hitos/Actividades 2019",
+        "name": "Hitos/Actividades 2020",
         "redirectTo": "/actividades"
     },
     {
         "icon": "md-cash",
         "name": "Memorandum",
         "redirectTo": "/financiamiento"
-    },
-    {
-        "icon": "md-alarm",
-        "name": "Login",
-        "redirectTo": "/login"
     }
 ]
