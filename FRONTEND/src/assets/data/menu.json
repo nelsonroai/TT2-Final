@@ -1,12 +1,12 @@
 [{
         "icon": "md-paper-plane",
         "name": "Lista Iniciativas VcM",
-        "redirectTo": ""
+        "redirectTo": "/listainiciativas"
     },
     {
         "icon": "md-paper-plane",
         "name": "Ejecucion Iniciativas 2020",
-        "redirectTo": ""
+        "redirectTo": "/iniciativas"
     },
     {
         "icon": "ios-paper",
@@ -41,12 +41,12 @@
     {
         "icon": "md-paper-plane",
         "name": "Lista POA",
-        "redirectTo": ""
+        "redirectTo": "/listapoa"
     },
     {
         "icon": "md-paper-plane",
         "name": "Ejecucion POA 2020",
-        "redirectTo": ""
+        "redirectTo": "/ejecucionpoa"
     },
     {
         "icon": "md-settings",
