@@ -49,6 +49,12 @@ getProgramas() {
 getProgramasEjecucion() {
   return this.http.get<RootObject>(`http://localhost:8010/api/listprogramasejecucion`);
 }
+getProyectos() {
+  return this.http.get<RootObject>(`http://localhost:8010/api/listproyectos`);
+}
+getProyectosEjecucion() {
+  return this.http.get<RootObject>(`http://localhost:8010/api/listproyectosejecucion`);
+}
 getMenuOpts() {
   return this.http.get<Componente[]>('/assets/data/menu.json');
   }

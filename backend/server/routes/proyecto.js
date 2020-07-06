@@ -17,6 +17,8 @@ module.exports = (app) => {
     app.get('/api/counttotalagendar', proyectoController.NumTotalAgendar);
     app.get('/api/counttotalfinalizado', proyectoController.NumTotalFinalizado);
     app.get('/api/counttotalnorealizado', proyectoController.NumTotalNorealizado);
+    app.get('/api/listproyectos', proyectoController.listarproyectos);
+    app.get('/api/listproyectosejecucion', proyectoController.listarproyectosejecucion);
 
     //app.post('/api/login', usuariosController.login);
     //app.get('/api/proyectos', usuariosController.getAll);

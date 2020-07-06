@@ -21,7 +21,7 @@ function listarprogramas(req, res) {
             order: [
                 ['cod_proyecto', 'DESC']
             ],
-            limit: 10
+            limit: 20
         })
         .then(proyectos => {
             res.status(200).send({ proyectos });
@@ -41,7 +41,7 @@ function listarprogramasejecucion(req, res) {
             order: [
                 ['cod_proyecto', 'DESC']
             ],
-            limit: 10
+            limit: 20
         })
         .then(proyectos => {
             res.status(200).send({ proyectos });
@@ -216,6 +216,47 @@ function NumTotalNorealizado(req, res) {
             res.status(500).send({ err });
         });
 }
+
+function listarproyectos(req, res) {
+
+    proyecto.findAndCountAll({
+            where: {
+                tipo_proy: [1, 2, 3, 6]
+            },
+            order: [
+                ['cod_proyecto', 'DESC']
+            ],
+            limit: 20
+        })
+        .then(proyectos => {
+            res.status(200).send({ proyectos });
+        })
+        .catch(err => {
+            res.status(500).send({ err });
+        });
+}
+
+function listarproyectosejecucion(req, res) {
+
+    proyecto.findAndCountAll({
+            where: {
+                tipo_proy: [1, 2, 3, 6],
+                cod_estado: 6
+            },
+            order: [
+                ['cod_proyecto', 'DESC']
+            ],
+            limit: 20
+        })
+        .then(proyectos => {
+            res.status(200).send({ proyectos });
+        })
+        .catch(err => {
+            res.status(500).send({ err });
+        });
+}
+
+
 module.exports = {
     create,
     listarprogramas,
@@ -227,5 +268,7 @@ module.exports = {
     NumTotalAprobados,
     NumTotalAgendar,
     NumTotalFinalizado,
-    NumTotalNorealizado
+    NumTotalNorealizado,
+    listarproyectos,
+    listarproyectosejecucion
 };
