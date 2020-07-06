@@ -157,7 +157,65 @@ function NumTotalAprobados(req, res) {
         });
 }
 
+function NumTotalAgendar(req, res) {
+    proyecto.findAndCountAll({
+            where: {
+                cod_estado: 4
+            },
+            attributes: [
 
+                proyecto.sequelize.fn('count',
+                    proyecto.sequelize.col('cod_estado')
+                )
+
+            ]
+        }).then(proyectos => {
+            res.status(200).send({ proyectos });
+        })
+        .catch(err => {
+            res.status(500).send({ err });
+        });
+}
+
+function NumTotalFinalizado(req, res) {
+    proyecto.findAndCountAll({
+            where: {
+                cod_estado: 7
+            },
+            attributes: [
+
+                proyecto.sequelize.fn('count',
+                    proyecto.sequelize.col('cod_estado')
+                )
+
+            ]
+        }).then(proyectos => {
+            res.status(200).send({ proyectos });
+        })
+        .catch(err => {
+            res.status(500).send({ err });
+        });
+}
+
+function NumTotalNorealizado(req, res) {
+    proyecto.findAndCountAll({
+            where: {
+                cod_estado: 8
+            },
+            attributes: [
+
+                proyecto.sequelize.fn('count',
+                    proyecto.sequelize.col('cod_estado')
+                )
+
+            ]
+        }).then(proyectos => {
+            res.status(200).send({ proyectos });
+        })
+        .catch(err => {
+            res.status(500).send({ err });
+        });
+}
 module.exports = {
     create,
     listarprogramas,
@@ -166,5 +224,8 @@ module.exports = {
     NumProgramasEjecucion,
     NumProgramasAprobados,
     NumTotalEjecucion,
-    NumTotalAprobados
+    NumTotalAprobados,
+    NumTotalAgendar,
+    NumTotalFinalizado,
+    NumTotalNorealizado
 };

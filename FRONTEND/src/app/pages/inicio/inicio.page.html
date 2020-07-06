@@ -23,21 +23,21 @@
     </ion-card>
 
 
-    <ion-card mode="ios" color="warning">
+    <ion-card mode="ios" color="warning" *ngFor="let c of counttotalagendar">
         <ion-card-content>
-            Agendar:
+            Agendar: {{c}}
         </ion-card-content>
     </ion-card>
 
-    <ion-card mode="ios" color="secondary">
+    <ion-card mode="ios" color="secondary" *ngFor="let c of counttotalfinalizado">
         <ion-card-content>
-            Finalizados:
+            Finalizados: {{c}}
         </ion-card-content>
     </ion-card>
 
-    <ion-card mode="ios" color="light">
+    <ion-card mode="ios" color="light" *ngFor="let c of counttotalnorealizado">
         <ion-card-content>
-            No realizados:
+            No realizados: {{c}}
         </ion-card-content>
     </ion-card>
 

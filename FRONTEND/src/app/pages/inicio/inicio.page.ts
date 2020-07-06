@@ -17,6 +17,9 @@ export class InicioPage implements OnInit {
   proye: Row[] = [];
   counttotalejecucion: any[] = [];
   counttotalaprobado: any[] = [];
+  counttotalagendar: any[] = [];
+  counttotalfinalizado: any[] = [];
+  counttotalnorealizado: any[] = [];
 
   constructor(
     private menuCtrl: MenuController,
@@ -34,6 +37,21 @@ export class InicioPage implements OnInit {
     .subscribe(resp  => {
       console.log('counttotalaprobados', resp);
       this.counttotalaprobado.push(resp.proyectos.count);
+    });
+    this.dataservice.getcountTotalagendar()
+    .subscribe(resp  => {
+      console.log('counttotalagendar', resp);
+      this.counttotalagendar.push(resp.proyectos.count);
+    });
+    this.dataservice.getcountTotalfinalizados()
+    .subscribe(resp  => {
+      console.log('counttotalfinalizado', resp);
+      this.counttotalfinalizado.push(resp.proyectos.count);
+    });
+    this.dataservice.getcountTotalnorealizados()
+    .subscribe(resp  => {
+      console.log('counttotalnorealizado', resp);
+      this.counttotalnorealizado.push(resp.proyectos.count);
     });
   }
   toggleMenu() {

@@ -32,6 +32,16 @@ getcountTotalaprobados() {
   return this.http.get<RootObject>(`http://localhost:8010/api/counttotalaprobados`);
   }
 
+getcountTotalagendar() {
+    return this.http.get<RootObject>(`http://localhost:8010/api/counttotalagendar`);
+  }
+
+getcountTotalfinalizados() {
+    return this.http.get<RootObject>(`http://localhost:8010/api/counttotalfinalizado`);
+  }
+getcountTotalnorealizados() {
+    return this.http.get<RootObject>(`http://localhost:8010/api/counttotalnorealizado`);
+  }
 
 getProgramas() {
   return this.http.get<RootObject>(`http://localhost:8010/api/listprogramas`);
