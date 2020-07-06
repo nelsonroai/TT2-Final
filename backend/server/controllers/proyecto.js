@@ -256,6 +256,48 @@ function listarproyectosejecucion(req, res) {
         });
 }
 
+function NumProyectosEjecucion(req, res) {
+    proyecto.findAndCountAll({
+            where: {
+                tipo_proy: [1, 2, 3, 6],
+                cod_estado: 6
+            },
+            attributes: [
+
+                proyecto.sequelize.fn('count',
+                    proyecto.sequelize.col('cod_estado')
+                )
+
+            ]
+        }).then(proyectos => {
+            res.status(200).send({ proyectos });
+        })
+        .catch(err => {
+            res.status(500).send({ err });
+        });
+}
+
+function NumProyectosAprobados(req, res) {
+    proyecto.findAndCountAll({
+            where: {
+                tipo_proy: [1, 2, 3, 6],
+                cod_estado: 5
+            },
+            attributes: [
+
+                proyecto.sequelize.fn('count',
+                    proyecto.sequelize.col('cod_estado')
+                )
+
+            ]
+        }).then(proyectos => {
+            res.status(200).send({ proyectos });
+        })
+        .catch(err => {
+            res.status(500).send({ err });
+        });
+}
+
 
 module.exports = {
     create,
@@ -270,5 +312,7 @@ module.exports = {
     NumTotalFinalizado,
     NumTotalNorealizado,
     listarproyectos,
-    listarproyectosejecucion
+    listarproyectosejecucion,
+    NumProyectosEjecucion,
+    NumProyectosAprobados
 };

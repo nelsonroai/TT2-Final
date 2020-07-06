@@ -26,6 +26,16 @@ export class EjecucionproyectosPage implements OnInit {
       console.log('listproyectosejecucion', resp);
       this.proye.push(...resp.proyectos.rows);
     });
+    this.dataservice.getcountProyectosejecucion()
+    .subscribe(resp  => {
+      console.log('countproyectosejecucion', resp);
+      this.countejecucion.push(resp.proyectos.count);
+    });
+    this.dataservice.getcountProyectosaprobados()
+    .subscribe(resp  => {
+      console.log('countproyectosaprobados', resp);
+      this.countaprobados.push(resp.proyectos.count);
+    });
   }
 
 }

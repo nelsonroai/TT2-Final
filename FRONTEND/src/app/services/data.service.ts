@@ -42,6 +42,12 @@ getcountTotalfinalizados() {
 getcountTotalnorealizados() {
     return this.http.get<RootObject>(`http://localhost:8010/api/counttotalnorealizado`);
   }
+  getcountProyectosejecucion() {
+    return this.http.get<RootObject>(`http://localhost:8010/api/countproyectosejecucion`);
+    }
+  getcountProyectosaprobados() {
+    return this.http.get<RootObject>(`http://localhost:8010/api/countproyectosaprobados`);
+    }
 
 getProgramas() {
   return this.http.get<RootObject>(`http://localhost:8010/api/listprogramas`);

@@ -3,6 +3,7 @@ import { MenuController } from '@ionic/angular';
 import { Componente, Row } from '../../interfaces/interfaces';
 import { DataService } from '../../services/data.service';
 
+
 @Component({
   selector: 'app-listaproyectos',
   templateUrl: './listaproyectos.page.html',
@@ -25,6 +26,16 @@ export class ListaproyectosPage implements OnInit {
     .subscribe(resp  => {
       console.log('listproyectos', resp);
       this.proye.push(...resp.proyectos.rows);
+    });
+    this.dataservice.getcountProyectosejecucion()
+    .subscribe(resp  => {
+      console.log('countproyectosejecucion', resp);
+      this.countejecucion.push(resp.proyectos.count);
+    });
+    this.dataservice.getcountProyectosaprobados()
+    .subscribe(resp  => {
+      console.log('countproyectosaprobados', resp);
+      this.countaprobados.push(resp.proyectos.count);
     });
 
   }
