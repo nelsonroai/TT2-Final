@@ -17,17 +17,21 @@ export class UsuarioService {
     return new Promise( resolve => {
 
       this.http.post(`http://localhost:8010/api/login`, data)
-      .subscribe(resp => {
+      .subscribe(async resp => {
         console.log(resp);
 
         if (resp ['ok']) {
-          this.guardarToken(resp['token']);
+          await this.guardarToken(resp['token']);
             resolve(true);
         } else {
           this.token = null;
           this.storage.clear();
           resolve(false);
         }
+      }, (err) => {
+        this.token = null;
+        this.storage.clear();
+        resolve(false);
       });
     });
 
