@@ -13,7 +13,13 @@ export class AlertasService {
       message,
       buttons: ['OK']
     });
-
+    await alert.present();
+  }
+  async AlertaDetalle(message: string) {
+    const alert = await this.alertController.create({
+      message,
+      buttons: ['OK']
+    });
     await alert.present();
   }
 }

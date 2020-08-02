@@ -34,9 +34,7 @@
         </ion-item>
         <ion-item *ngFor="let p of proye">
             <ion-label text-center>
-
                 <p>{{p.cod_proyecto}}</p>
-
             </ion-label>
             <ion-label text-center>
                 <p>{{p.nom_proyecto}}</p>
@@ -45,7 +43,18 @@
                 <p>{{p.cod_estado}}</p>
             </ion-label>
             <ion-label text-center>
-                <img src="https://img.icons8.com/dotty/30/000000/pdf.png" />
+                <ion-toolbar>
+                    <ion-buttons>
+                        <ion-button routerLink="/inicio"><img src="https://img.icons8.com/dotty/30/000000/pdf.png" /></ion-button>
+
+                        <ion-button>
+                            <ion-icon name="search" routerLink="/listaproyectos"></ion-icon>
+                        </ion-button>
+                    </ion-buttons>
+
+
+
+                </ion-toolbar>
             </ion-label>
         </ion-item>
     </ion-list>
