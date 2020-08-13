@@ -24,6 +24,7 @@ module.exports = (app) => {
     app.get('/api/listiniciativas', proyectoController.listariniciativas);
     app.get('/api/countiniciativasejecucion', proyectoController.NumIniciativasEjecucion);
     app.get('/api/countiniciativasaprobados', proyectoController.NumIniciativasAprobados);
+    app.get('/api/listiniciativasejecucion', proyectoController.listariniciativasejecucion);
 
 
     //app.post('/api/login', usuariosController.login);

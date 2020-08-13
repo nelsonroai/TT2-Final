@@ -61,6 +61,9 @@ getProgramas() {
 getIniciativas() {
   return this.http.get<RootObject>(`http://localhost:8010/api/listiniciativas`);
 }
+getIniciativasEjecucion() {
+  return this.http.get<RootObject>(`http://localhost:8010/api/listiniciativasejecucion`);
+}
 getProgramasEjecucion() {
   return this.http.get<RootObject>(`http://localhost:8010/api/listprogramasejecucion`);
 }
