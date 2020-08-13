@@ -48,9 +48,18 @@ getcountTotalnorealizados() {
   getcountProyectosaprobados() {
     return this.http.get<RootObject>(`http://localhost:8010/api/countproyectosaprobados`);
     }
+  getcountIniciativasejecucion() {
+    return this.http.get<RootObject>(`http://localhost:8010/api/countiniciativasejecucion`);
+    }
+  getcountIniciativasaprobados() {
+    return this.http.get<RootObject>(`http://localhost:8010/api/countiniciativasaprobados`);
+    }
 
 getProgramas() {
   return this.http.get<RootObject>(`http://localhost:8010/api/listprogramas`);
+}
+getIniciativas() {
+  return this.http.get<RootObject>(`http://localhost:8010/api/listiniciativas`);
 }
 getProgramasEjecucion() {
   return this.http.get<RootObject>(`http://localhost:8010/api/listprogramasejecucion`);

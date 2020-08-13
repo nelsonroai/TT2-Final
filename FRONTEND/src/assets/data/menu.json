@@ -5,7 +5,7 @@
     },
     {
         "icon": "md-paper-plane",
-        "name": "Ejecucion Iniciativas 2020",
+        "name": "Ejecución Iniciativas 2020",
         "redirectTo": "/iniciativas"
     },
     {
@@ -15,7 +15,7 @@
     },
     {
         "icon": "ios-paper",
-        "name": "Ejecucion Programas 2020",
+        "name": "Ejecución Programas 2020",
         "redirectTo": "/ejecucionprogramas"
     },
     {
@@ -25,7 +25,7 @@
     },
     {
         "icon": "md-paper-plane",
-        "name": "Ejecucion UET 2020",
+        "name": "Ejecución UET 2020",
         "redirectTo": "/ejecucionproyectos"
     },
     {
@@ -35,7 +35,7 @@
     },
     {
         "icon": "md-list",
-        "name": "Ejecucion Extensión 2020",
+        "name": "Ejecución Extensión 2020",
         "redirectTo": "/ejecucionextension"
     },
     {
@@ -45,7 +45,7 @@
     },
     {
         "icon": "md-paper-plane",
-        "name": "Ejecucion POA 2020",
+        "name": "Ejecución POA 2020",
         "redirectTo": "/ejecucionpoa"
     },
     {
@@ -55,7 +55,7 @@
     },
     {
         "icon": "md-cash",
-        "name": "Memorandum",
+        "name": "Memorándum",
         "redirectTo": "/financiamiento"
     }
 ]
