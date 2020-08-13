@@ -21,6 +21,10 @@ module.exports = (app) => {
     app.get('/api/listproyectosejecucion', proyectoController.listarproyectosejecucion);
     app.get('/api/countproyectosejecucion', proyectoController.NumProyectosEjecucion);
     app.get('/api/countproyectosaprobados', proyectoController.NumProyectosAprobados);
+    app.get('/api/listiniciativasejecucion', proyectoController.listariniciativas);
+    app.get('/api/countiniciativasejecucion', proyectoController.NumIniciativasEjecucion);
+    app.get('/api/countiniciativasaprobados', proyectoController.NumIniciativasAprobados);
+
 
     //app.post('/api/login', usuariosController.login);
     //app.get('/api/proyectos', usuariosController.getAll);

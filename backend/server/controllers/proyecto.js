@@ -298,6 +298,66 @@ function NumProyectosAprobados(req, res) {
         });
 }
 
+function listariniciativas(req, res) {
+
+    proyecto.findAndCountAll({
+            where: {
+                tipo_proy: [0]
+            },
+            order: [
+                ['cod_proyecto', 'DESC']
+            ],
+            limit: 20
+        })
+        .then(proyectos => {
+            res.status(200).send({ proyectos });
+        })
+        .catch(err => {
+            res.status(500).send({ err });
+        });
+}
+
+function NumIniciativasEjecucion(req, res) {
+    proyecto.findAndCountAll({
+            where: {
+                tipo_proy: [0],
+                cod_estado: 6
+            },
+            attributes: [
+
+                proyecto.sequelize.fn('count',
+                    proyecto.sequelize.col('cod_estado')
+                )
+
+            ]
+        }).then(proyectos => {
+            res.status(200).send({ proyectos });
+        })
+        .catch(err => {
+            res.status(500).send({ err });
+        });
+}
+
+function NumIniciativasAprobados(req, res) {
+    proyecto.findAndCountAll({
+            where: {
+                tipo_proy: [0],
+                cod_estado: 5
+            },
+            attributes: [
+
+                proyecto.sequelize.fn('count',
+                    proyecto.sequelize.col('cod_estado')
+                )
+
+            ]
+        }).then(proyectos => {
+            res.status(200).send({ proyectos });
+        })
+        .catch(err => {
+            res.status(500).send({ err });
+        });
+}
 
 module.exports = {
     create,
@@ -314,5 +374,8 @@ module.exports = {
     listarproyectos,
     listarproyectosejecucion,
     NumProyectosEjecucion,
-    NumProyectosAprobados
+    NumProyectosAprobados,
+    listariniciativas,
+    NumIniciativasEjecucion,
+    NumIniciativasAprobados
 };

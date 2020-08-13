@@ -14,8 +14,8 @@ export class LoginPage implements OnInit {
 
 
 loginUser = {
-  cod_rut: 18367582,
-  password: 'pepito'
+  cod_rut: null,
+  password: ''
 };
 
 constructor( private usuarioService: UsuarioService, private navCtrl: NavController, private alertasService: AlertasService) { }
