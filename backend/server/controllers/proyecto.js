@@ -16,7 +16,7 @@ function listarprogramas(req, res) {
 
     proyecto.findAndCountAll({
             where: {
-                tipo_proy: [4, 5]
+                tipo_proy: [1]
             },
             order: [
                 ['cod_proyecto', 'DESC']
@@ -35,7 +35,7 @@ function listarprogramasejecucion(req, res) {
 
     proyecto.findAndCountAll({
             where: {
-                tipo_proy: [4, 5],
+                tipo_proy: [1],
                 cod_estado: 6
             },
             order: [
@@ -78,7 +78,7 @@ function update(req, res) {
 function NumProgramasEjecucion(req, res) {
     proyecto.findAndCountAll({
             where: {
-                tipo_proy: [4, 5],
+                tipo_proy: [1],
                 cod_estado: 6
             },
             attributes: [
@@ -99,7 +99,7 @@ function NumProgramasEjecucion(req, res) {
 function NumProgramasAprobados(req, res) {
     proyecto.findAndCountAll({
             where: {
-                tipo_proy: [4, 5],
+                tipo_proy: [1],
                 cod_estado: 5
             },
             attributes: [
@@ -221,7 +221,7 @@ function listarproyectos(req, res) {
 
     proyecto.findAndCountAll({
             where: {
-                tipo_proy: [1, 2, 3, 6]
+                tipo_proy: [3]
             },
             order: [
                 ['cod_proyecto', 'DESC']
@@ -240,7 +240,7 @@ function listarproyectosejecucion(req, res) {
 
     proyecto.findAndCountAll({
             where: {
-                tipo_proy: [1, 2, 3, 6],
+                tipo_proy: [3],
                 cod_estado: 6
             },
             order: [
@@ -259,7 +259,7 @@ function listarproyectosejecucion(req, res) {
 function NumProyectosEjecucion(req, res) {
     proyecto.findAndCountAll({
             where: {
-                tipo_proy: [1, 2, 3, 6],
+                tipo_proy: [3],
                 cod_estado: 6
             },
             attributes: [
@@ -280,7 +280,7 @@ function NumProyectosEjecucion(req, res) {
 function NumProyectosAprobados(req, res) {
     proyecto.findAndCountAll({
             where: {
-                tipo_proy: [1, 2, 3, 6],
+                tipo_proy: [3],
                 cod_estado: 5
             },
             attributes: [
@@ -378,6 +378,67 @@ function listariniciativasejecucion(req, res) {
             res.status(500).send({ err });
         });
 }
+
+function listarExtension(req, res) {
+
+    proyecto.findAndCountAll({
+            where: {
+                tipo_proy: [2]
+            },
+            order: [
+                ['cod_proyecto', 'DESC']
+            ],
+            limit: 20
+        })
+        .then(proyectos => {
+            res.status(200).send({ proyectos });
+        })
+        .catch(err => {
+            res.status(500).send({ err });
+        });
+}
+
+function NumExtensionEjecucion(req, res) {
+    proyecto.findAndCountAll({
+            where: {
+                tipo_proy: [2],
+                cod_estado: 6
+            },
+            attributes: [
+
+                proyecto.sequelize.fn('count',
+                    proyecto.sequelize.col('cod_estado')
+                )
+
+            ]
+        }).then(proyectos => {
+            res.status(200).send({ proyectos });
+        })
+        .catch(err => {
+            res.status(500).send({ err });
+        });
+}
+
+function NumExtensionAprobados(req, res) {
+    proyecto.findAndCountAll({
+            where: {
+                tipo_proy: [2],
+                cod_estado: 5
+            },
+            attributes: [
+
+                proyecto.sequelize.fn('count',
+                    proyecto.sequelize.col('cod_estado')
+                )
+
+            ]
+        }).then(proyectos => {
+            res.status(200).send({ proyectos });
+        })
+        .catch(err => {
+            res.status(500).send({ err });
+        });
+}
 module.exports = {
     create,
     listarprogramas,
@@ -397,5 +458,8 @@ module.exports = {
     listariniciativas,
     NumIniciativasEjecucion,
     NumIniciativasAprobados,
-    listariniciativasejecucion
+    listariniciativasejecucion,
+    listarExtension,
+    NumExtensionEjecucion,
+    NumExtensionAprobados
 };

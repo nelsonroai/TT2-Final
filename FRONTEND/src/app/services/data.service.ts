@@ -54,6 +54,12 @@ getcountTotalnorealizados() {
   getcountIniciativasaprobados() {
     return this.http.get<RootObject>(`http://localhost:8010/api/countiniciativasaprobados`);
     }
+    getcountExtensionejecucion() {
+      return this.http.get<RootObject>(`http://localhost:8010/api/countextensionejecucion`);
+      }
+    getcountExtensionaprobados() {
+      return this.http.get<RootObject>(`http://localhost:8010/api/countextensionaprobados`);
+      }
 
 getProgramas() {
   return this.http.get<RootObject>(`http://localhost:8010/api/listprogramas`);
@@ -72,6 +78,9 @@ getProyectos() {
 }
 getProyectosEjecucion() {
   return this.http.get<RootObject>(`http://localhost:8010/api/listproyectosejecucion`);
+}
+getExtension() {
+  return this.http.get<RootObject>(`http://localhost:8010/api/listextension`);
 }
 getMenuOpts() {
   return this.http.get<Componente[]>('/assets/data/menu.json');
