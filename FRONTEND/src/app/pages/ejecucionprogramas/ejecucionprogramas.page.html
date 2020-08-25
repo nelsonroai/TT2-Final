@@ -1,17 +1,14 @@
 <app-header titulo="Periodo Ejecución 2020"></app-header>
 
 <ion-content>
-    <ion-card mode="ios" color="success" *ngFor="let c of countaprobados">
-        <ion-card-content>
-            Aprobados: {{c}}
-        </ion-card-content>
-    </ion-card>
-
-    <ion-card mode="ios" color="tertiary" *ngFor="let c of countejecucion">
-        <ion-card-content>
-            Ejecución: {{c}}
-        </ion-card-content>
-    </ion-card>
+    <ion-item mode="ios" color="success" *ngFor="let c of countaprobados">
+        <ion-label>Aprobados</ion-label>
+        <ion-badge slot="end" color="success">{{c}}</ion-badge>
+    </ion-item>
+    <ion-item mode="ios" color="tertiary" *ngFor="let c of countejecucion">
+        <ion-label>Ejecución</ion-label>
+        <ion-badge slot="end" color="tertiary">{{c}}</ion-badge>
+    </ion-item>
 
     <ion-list>
         <ion-item>
@@ -56,6 +53,21 @@
 </ion-content>
 
 
-<ion-tabs></ion-tabs>
 
-<app-piepag></app-piepag>
+
+<ion-tab-bar color="primary">
+    <ion-tab-button tab="account">
+        <ion-icon name="person"></ion-icon>
+        <ion-label>Account</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="contacto">
+        <ion-icon name="call"></ion-icon>
+        <ion-label>Contacto</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="settings">
+        <ion-icon name="settings"></ion-icon>
+        <ion-label>Settings</ion-label>
+    </ion-tab-button>
+</ion-tab-bar>

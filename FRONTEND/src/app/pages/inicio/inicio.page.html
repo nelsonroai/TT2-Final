@@ -9,7 +9,7 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content class="background">
+<ion-content>
     <ion-card mode="ios" color="success" *ngFor="let c of counttotalaprobado">
         <ion-card-content>
             Aprobados: {{c}}
@@ -44,9 +44,19 @@
 </ion-content>
 
 
-<ion-tabs>
+<ion-tab-bar color="primary">
+    <ion-tab-button tab="account">
+        <ion-icon name="person"></ion-icon>
+        <ion-label>Account</ion-label>
+    </ion-tab-button>
 
+    <ion-tab-button tab="contacto">
+        <ion-icon name="call"></ion-icon>
+        <ion-label>Contacto</ion-label>
+    </ion-tab-button>
 
-</ion-tabs>
-
-<app-piepag></app-piepag>
+    <ion-tab-button tab="settings">
+        <ion-icon name="settings"></ion-icon>
+        <ion-label>Settings</ion-label>
+    </ion-tab-button>
+</ion-tab-bar>

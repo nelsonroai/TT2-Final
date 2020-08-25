@@ -16,6 +16,20 @@
 </ion-content>
 <ion-button><img src="https://img.icons8.com/dotty/30/000000/search-more.png" /></ion-button>
 <ion-button><img src="https://img.icons8.com/dotty/30/000000/pdf.png" /></ion-button>
-<ion-tabs></ion-tabs>
 
-<app-piepag></app-piepag>
+<ion-tab-bar color="primary">
+    <ion-tab-button tab="account">
+        <ion-icon name="person"></ion-icon>
+        <ion-label>Account</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="contacto">
+        <ion-icon name="call"></ion-icon>
+        <ion-label>Contacto</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="settings">
+        <ion-icon name="settings"></ion-icon>
+        <ion-label>Settings</ion-label>
+    </ion-tab-button>
+</ion-tab-bar>

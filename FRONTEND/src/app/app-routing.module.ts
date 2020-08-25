@@ -18,7 +18,8 @@ const routes: Routes = [
   { path: 'iniciativas', loadChildren: './pages/iniciativas/iniciativas.module#IniciativasPageModule' },
   { path: 'listainiciativas', loadChildren: './pages/listainiciativas/listainiciativas.module#ListainiciativasPageModule' },
   { path: 'listapoa', loadChildren: './pages/listapoa/listapoa.module#ListapoaPageModule' },
-  { path: 'ejecucionpoa', loadChildren: './pages/ejecucionpoa/ejecucionpoa.module#EjecucionpoaPageModule' }
+  { path: 'ejecucionpoa', loadChildren: './pages/ejecucionpoa/ejecucionpoa.module#EjecucionpoaPageModule' },
+  { path: 'estado', loadChildren: './pages/estado/estado.module#EstadoPageModule' }
 ];
 
 @NgModule({

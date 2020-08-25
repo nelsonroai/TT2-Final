@@ -1,0 +1,47 @@
+<app-header titulo="Editar estado"></app-header>
+
+<ion-content [fullscreen]="true">
+    <ion-list>
+        <ion-radio-group value="biff">
+            <ion-list-header>
+                <ion-label>Cambiar de estado: </ion-label>
+            </ion-list-header>
+
+            <ion-item>
+                <ion-label>Aprobado</ion-label>
+                <ion-radio slot="end" value="Aprobado"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Rechazado</ion-label>
+                <ion-radio slot="end" value="Rechazado"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Observaciones</ion-label>
+                <ion-radio slot="end" value="Observaciones"></ion-radio>
+            </ion-item>
+        </ion-radio-group>
+    </ion-list>
+    <ion-button expand="block">Aceptar</ion-button>
+
+</ion-content>
+
+
+
+<ion-tab-bar color="primary">
+    <ion-tab-button tab="account">
+        <ion-icon name="person"></ion-icon>
+        <ion-label>Account</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="contacto">
+        <ion-icon name="call"></ion-icon>
+        <ion-label>Contacto</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="settings">
+        <ion-icon name="settings"></ion-icon>
+        <ion-label>Configuraciones</ion-label>
+    </ion-tab-button>
+</ion-tab-bar>
