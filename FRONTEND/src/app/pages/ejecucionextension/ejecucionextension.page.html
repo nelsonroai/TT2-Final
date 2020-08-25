@@ -1,50 +1,60 @@
 <app-header titulo="Periodo Ejecución 2020"></app-header>
 
-<ion-content padding>
+<ion-content>
+    <ion-item mode="ios" color="success" *ngFor="let c of countaprobados">
+        <ion-label>Aprobados</ion-label>
+        <ion-badge slot="end" color="success">{{c}}</ion-badge>
+    </ion-item>
+    <ion-item mode="ios" color="tertiary" *ngFor="let c of countejecucion">
+        <ion-label>Ejecución</ion-label>
+        <ion-badge slot="end" color="tertiary">{{c}}</ion-badge>
+    </ion-item>
 
-    <ion-card mode="ios" color="primary">
-        <ion-card-content>
-            <h4 class=" gray " align="center ">PROPUESTA PROTECTOS AÑO 2020</h4>
-        </ion-card-content>
-    </ion-card>
+    <ion-list>
+        <ion-item>
 
-    <ion-card mode="ios">
-        <ion-card-content>
-            ESTADO (PROYECTOS):
-        </ion-card-content>
-    </ion-card>
+            <ion-label text-center>
+                <h3>Codigo</h3>
+            </ion-label>
 
-    <ion-card mode="ios" color="medium">
-        <ion-card-content>
-            Agendar:
-        </ion-card-content>
-    </ion-card>
+            <ion-label text-center>
+                <h3>Prog VcM</h3>
+            </ion-label>
 
-    <ion-card mode="ios" color="tertiary">
-        <ion-card-content>
-            Aprobados:
-        </ion-card-content>
-    </ion-card>
+            <ion-label text-center>
+                <h3>Estado</h3>
+            </ion-label>
 
-    <ion-card mode="ios" color="success">
-        <ion-card-content>
-            Ejecución:
-        </ion-card-content>
-    </ion-card>
+            <ion-label text-center>
+                <h3>Comp</h3>
+            </ion-label>
 
-    <ion-card mode="ios" color="warning">
-        <ion-card-content>
-            Finalizados:
-        </ion-card-content>
-    </ion-card>
+        </ion-item>
+        <ion-item *ngFor="let p of proye">
 
-    <ion-card mode="ios" color="medium">
-        <ion-card-content>
-            No realizados:
-        </ion-card-content>
-    </ion-card>
+            <ion-label text-center>
+                <p>{{p.cod_proyecto}}</p>
+            </ion-label>
 
+            <ion-label text-center>
+                <p>{{p.nom_proyecto}}</p>
+            </ion-label>
+
+            <ion-label text-center>
+                <p>{{p.cod_estado}}</p>
+            </ion-label>
+
+            <ion-label text-center>
+
+                <img src="https://img.icons8.com/dotty/30/000000/pdf.png" />
+
+            </ion-label>
+
+        </ion-item>
+    </ion-list>
 </ion-content>
+
+
 
 
 <ion-tab-bar color="primary">

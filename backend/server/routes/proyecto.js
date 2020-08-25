@@ -28,6 +28,7 @@ module.exports = (app) => {
     app.get('/api/listextension', proyectoController.listarExtension);
     app.get('/api/countextensionejecucion', proyectoController.NumExtensionEjecucion);
     app.get('/api/countextensionaprobados', proyectoController.NumExtensionAprobados);
+    app.get('/api/listextensionejecucion', proyectoController.listarextensionejecucion);
 
 
     //app.post('/api/login', usuariosController.login);

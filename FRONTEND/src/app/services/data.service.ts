@@ -82,6 +82,9 @@ getProyectosEjecucion() {
 getExtension() {
   return this.http.get<RootObject>(`http://localhost:8010/api/listextension`);
 }
+getExtensionEjecucion() {
+  return this.http.get<RootObject>(`http://localhost:8010/api/listextensionejecucion`);
+}
 getMenuOpts() {
   return this.http.get<Componente[]>('/assets/data/menu.json');
   }

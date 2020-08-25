@@ -439,6 +439,26 @@ function NumExtensionAprobados(req, res) {
             res.status(500).send({ err });
         });
 }
+
+function listarextensionejecucion(req, res) {
+
+    proyecto.findAndCountAll({
+            where: {
+                tipo_proy: [2],
+                cod_estado: 6
+            },
+            order: [
+                ['cod_proyecto', 'DESC']
+            ],
+            limit: 20
+        })
+        .then(proyectos => {
+            res.status(200).send({ proyectos });
+        })
+        .catch(err => {
+            res.status(500).send({ err });
+        });
+}
 module.exports = {
     create,
     listarprogramas,
@@ -461,5 +481,6 @@ module.exports = {
     listariniciativasejecucion,
     listarExtension,
     NumExtensionEjecucion,
-    NumExtensionAprobados
+    NumExtensionAprobados,
+    listarextensionejecucion
 };
