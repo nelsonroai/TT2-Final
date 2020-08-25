@@ -17,6 +17,8 @@ getPrueba()/*agregado*/ {
 getUsuario() {
   return this.http.get(`http://localhost:8010/api/listusuarios`);
 }
+
+/*TODOSLOSGETCOUNT*/
 getcountProgramasejecucion() {
   return this.http.get<RootObject>(`http://localhost:8010/api/countprogramasejecucion`);
   }
@@ -42,25 +44,32 @@ getcountTotalfinalizados() {
 getcountTotalnorealizados() {
     return this.http.get<RootObject>(`http://localhost:8010/api/counttotalnorealizado`);
   }
-  getcountProyectosejecucion() {
+getcountProyectosejecucion() {
     return this.http.get<RootObject>(`http://localhost:8010/api/countproyectosejecucion`);
-    }
-  getcountProyectosaprobados() {
+  }
+getcountProyectosaprobados() {
     return this.http.get<RootObject>(`http://localhost:8010/api/countproyectosaprobados`);
-    }
-  getcountIniciativasejecucion() {
+  }
+getcountIniciativasejecucion() {
     return this.http.get<RootObject>(`http://localhost:8010/api/countiniciativasejecucion`);
-    }
-  getcountIniciativasaprobados() {
+  }
+getcountIniciativasaprobados() {
     return this.http.get<RootObject>(`http://localhost:8010/api/countiniciativasaprobados`);
-    }
-    getcountExtensionejecucion() {
-      return this.http.get<RootObject>(`http://localhost:8010/api/countextensionejecucion`);
-      }
-    getcountExtensionaprobados() {
-      return this.http.get<RootObject>(`http://localhost:8010/api/countextensionaprobados`);
-      }
+  }
+getcountExtensionejecucion() {
+    return this.http.get<RootObject>(`http://localhost:8010/api/countextensionejecucion`);
+  }
+getcountExtensionaprobados() {
+    return this.http.get<RootObject>(`http://localhost:8010/api/countextensionaprobados`);
+  }
+getcountPoaejecucion() {
+    return this.http.get<RootObject>(`http://localhost:8010/api/countpoaejecucion`);
+  }
+getcountPoaaprobados() {
+    return this.http.get<RootObject>(`http://localhost:8010/api/countpoaaprobados`);
+  }
 
+  /*TODOSLOSGET*/
 getProgramas() {
   return this.http.get<RootObject>(`http://localhost:8010/api/listprogramas`);
 }
@@ -84,6 +93,12 @@ getExtension() {
 }
 getExtensionEjecucion() {
   return this.http.get<RootObject>(`http://localhost:8010/api/listextensionejecucion`);
+}
+getPoa() {
+  return this.http.get<RootObject>(`http://localhost:8010/api/listpoa`);
+}
+getPoaEjecucion() {
+  return this.http.get<RootObject>(`http://localhost:8010/api/listpoaejecucion`);
 }
 getMenuOpts() {
   return this.http.get<Componente[]>('/assets/data/menu.json');

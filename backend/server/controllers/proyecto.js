@@ -379,7 +379,7 @@ function listariniciativasejecucion(req, res) {
         });
 }
 
-function listarExtension(req, res) {
+function listarextension(req, res) {
 
     proyecto.findAndCountAll({
             where: {
@@ -459,6 +459,88 @@ function listarextensionejecucion(req, res) {
             res.status(500).send({ err });
         });
 }
+
+function listarpoa(req, res) {
+
+    proyecto.findAndCountAll({
+            where: {
+                tipo_proy: [4]
+            },
+            order: [
+                ['cod_proyecto', 'DESC']
+            ],
+            limit: 20
+        })
+        .then(proyectos => {
+            res.status(200).send({ proyectos });
+        })
+        .catch(err => {
+            res.status(500).send({ err });
+        });
+}
+
+function NumPoaAprobados(req, res) {
+    proyecto.findAndCountAll({
+            where: {
+                tipo_proy: [4],
+                cod_estado: 5
+            },
+            attributes: [
+
+                proyecto.sequelize.fn('count',
+                    proyecto.sequelize.col('cod_estado')
+                )
+
+            ]
+        }).then(proyectos => {
+            res.status(200).send({ proyectos });
+        })
+        .catch(err => {
+            res.status(500).send({ err });
+        });
+}
+
+function NumPoaEjecucion(req, res) {
+    proyecto.findAndCountAll({
+            where: {
+                tipo_proy: [4],
+                cod_estado: 6
+            },
+            attributes: [
+
+                proyecto.sequelize.fn('count',
+                    proyecto.sequelize.col('cod_estado')
+                )
+
+            ]
+        }).then(proyectos => {
+            res.status(200).send({ proyectos });
+        })
+        .catch(err => {
+            res.status(500).send({ err });
+        });
+}
+
+function listarpoaejecucion(req, res) {
+
+    proyecto.findAndCountAll({
+            where: {
+                tipo_proy: [4],
+                cod_estado: 6
+            },
+            order: [
+                ['cod_proyecto', 'DESC']
+            ],
+            limit: 20
+        })
+        .then(proyectos => {
+            res.status(200).send({ proyectos });
+        })
+        .catch(err => {
+            res.status(500).send({ err });
+        });
+}
+
 module.exports = {
     create,
     listarprogramas,
@@ -479,8 +561,13 @@ module.exports = {
     NumIniciativasEjecucion,
     NumIniciativasAprobados,
     listariniciativasejecucion,
-    listarExtension,
+    listarextension,
     NumExtensionEjecucion,
     NumExtensionAprobados,
-    listarextensionejecucion
+    listarextensionejecucion,
+    listarpoa,
+    NumPoaAprobados,
+    NumPoaEjecucion,
+    listarpoaejecucion
+
 };

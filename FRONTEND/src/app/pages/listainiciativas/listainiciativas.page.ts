@@ -15,8 +15,10 @@ export class ListainiciativasPage implements OnInit {
   countejecucion: any[] = [];
   countaprobados: any[] = [];
 
-  constructor(private menuCtrl: MenuController,
-    private dataservice: DataService) { }
+  constructor(
+    private menuCtrl: MenuController,
+    private dataservice: DataService
+    ) { }
 
   ngOnInit() {
     this.dataservice.getIniciativas()

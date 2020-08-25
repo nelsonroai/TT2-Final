@@ -25,10 +25,15 @@ module.exports = (app) => {
     app.get('/api/countiniciativasejecucion', proyectoController.NumIniciativasEjecucion);
     app.get('/api/countiniciativasaprobados', proyectoController.NumIniciativasAprobados);
     app.get('/api/listiniciativasejecucion', proyectoController.listariniciativasejecucion);
-    app.get('/api/listextension', proyectoController.listarExtension);
+    app.get('/api/listextension', proyectoController.listarextension);
     app.get('/api/countextensionejecucion', proyectoController.NumExtensionEjecucion);
     app.get('/api/countextensionaprobados', proyectoController.NumExtensionAprobados);
     app.get('/api/listextensionejecucion', proyectoController.listarextensionejecucion);
+
+    app.get('/api/listpoa', proyectoController.listarpoa);
+    app.get('/api/countpoaejecucion', proyectoController.NumPoaEjecucion);
+    app.get('/api/countpoaaprobados', proyectoController.NumPoaAprobados);
+    app.get('/api/listpoaejecucion', proyectoController.listarpoaejecucion);
 
 
     //app.post('/api/login', usuariosController.login);
