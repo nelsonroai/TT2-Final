@@ -100,6 +100,9 @@ getPoa() {
 getPoaEjecucion() {
   return this.http.get<RootObject>(`http://localhost:8010/api/listpoaejecucion`);
 }
+getTodos() {
+  return this.http.get<RootObject>(`http://localhost:8010/api/listtodos`);
+}
 getMenuOpts() {
   return this.http.get<Componente[]>('/assets/data/menu.json');
   }

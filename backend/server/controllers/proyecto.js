@@ -541,6 +541,23 @@ function listarpoaejecucion(req, res) {
         });
 }
 
+function listartodos(req, res) {
+
+    proyecto.findAndCountAll({
+
+            order: [
+                ['cod_proyecto', 'DESC']
+            ],
+            limit: 20
+        })
+        .then(proyectos => {
+            res.status(200).send({ proyectos });
+        })
+        .catch(err => {
+            res.status(500).send({ err });
+        });
+}
+
 module.exports = {
     create,
     listarprogramas,
@@ -568,6 +585,7 @@ module.exports = {
     listarpoa,
     NumPoaAprobados,
     NumPoaEjecucion,
-    listarpoaejecucion
+    listarpoaejecucion,
+    listartodos
 
 };

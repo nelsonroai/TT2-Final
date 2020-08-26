@@ -35,6 +35,9 @@ module.exports = (app) => {
     app.get('/api/countpoaaprobados', proyectoController.NumPoaAprobados);
     app.get('/api/listpoaejecucion', proyectoController.listarpoaejecucion);
 
+    app.get('/api/listtodos', proyectoController.listartodos);
+
+
 
     //app.post('/api/login', usuariosController.login);
     //app.get('/api/proyectos', usuariosController.getAll);

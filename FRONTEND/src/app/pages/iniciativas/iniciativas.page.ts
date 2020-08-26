@@ -17,7 +17,8 @@ export class IniciativasPage implements OnInit {
 
   constructor(
     private menuCtrl: MenuController,
-    private dataservice: DataService) { }
+    private dataservice: DataService
+    ) { }
 
   ngOnInit() {
     this.dataservice.getIniciativasEjecucion()
