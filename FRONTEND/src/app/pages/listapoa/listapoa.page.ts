@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { DataService } from '../../services/data.service';
 import { Componente, Row } from '../../interfaces/interfaces';
+import pdfMake from 'pdfmake/build/pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
   selector: 'app-listapoa',
@@ -14,6 +18,10 @@ export class ListapoaPage implements OnInit {
   proye: Row[] = [];
   countejecucion: any[] = [];
   countaprobados: any[] = [];
+  pdfObj: any;
+  codigoproyecto: any;
+  codigoestado: any;
+  nombreproyecto: any;
 
   constructor(
     private menuCtrl: MenuController,
@@ -36,6 +44,21 @@ export class ListapoaPage implements OnInit {
       console.log('countpoaaprobados', resp);
       this.countaprobados.push(resp.proyectos.count);
     });
+  }
+  generatePDF(codigoproyecto, nombreproyecto, codigoestado) {
+    alert('pdf generado');
+    if (codigoestado === 9) {
+      codigoestado = 'Aprobado';
+    }
+    const dd = {
+      content: [
+        'Codigo del proyecto: ' + codigoproyecto,
+        'Nombre del proyecto: ' + nombreproyecto,
+        'Estado del proyecto: ' + codigoestado
+      ]
+    };
+    this.pdfObj = pdfMake.createPdf(dd);
+    this.pdfObj.download();
   }
 
 }

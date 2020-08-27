@@ -19,6 +19,9 @@ export class ListainiciativasPage implements OnInit {
   countejecucion: any[] = [];
   countaprobados: any[] = [];
   pdfObj: any;
+  codigoproyecto: any;
+  codigoestado: any;
+  nombreproyecto: any;
 
   constructor(
     private menuCtrl: MenuController,
@@ -42,13 +45,16 @@ export class ListainiciativasPage implements OnInit {
       this.countaprobados.push(resp.proyectos.count);
     });
   }
-  generatePDF() {
+  generatePDF(codigoproyecto, nombreproyecto, codigoestado) {
     alert('pdf generado');
+    if (codigoestado === 9) {
+      codigoestado = 'Aprobado';
+    }
     const dd = {
       content: [
-        'First paragraph',
-        'https://img.icons8.com/pastel-glyph/30/000000/search--v1.png',
-        'Another paragraph, this time a little bit longer to make sure, this line will be divided into at least two lines'
+        'Codigo del proyecto: ' + codigoproyecto,
+        'Nombre del proyecto: ' + nombreproyecto,
+        'Estado del proyecto: ' + codigoestado
       ]
     };
     this.pdfObj = pdfMake.createPdf(dd);
