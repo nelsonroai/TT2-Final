@@ -47,8 +47,35 @@ export class EjecucionpoaPage implements OnInit {
   }
   generatePDF(codigoproyecto, nombreproyecto, codigoestado) {
     alert('pdf generado');
-    if (codigoestado === 9) {
+    if (codigoestado === 5) {
       codigoestado = 'Aprobado';
+    }
+    if (codigoestado === 0) {
+      codigoestado = 'Incompleta';
+    }
+    if (codigoestado === 1) {
+      codigoestado = 'Ingresada';
+    }
+    if (codigoestado === 2) {
+      codigoestado = 'Admisible';
+    }
+    if (codigoestado === 3) {
+      codigoestado = 'Preaprobada';
+    }
+    if (codigoestado === 4) {
+      codigoestado = 'Agendar';
+    }
+    if (codigoestado === 6) {
+      codigoestado = 'Ejecución';
+    }
+    if (codigoestado === 7) {
+      codigoestado = 'Finalizado';
+    }
+    if (codigoestado === 8) {
+      codigoestado = 'No realizado';
+    }
+    if (codigoestado === 9) {
+      codigoestado = 'Rechazada';
     }
     const dd = {
       content: [
