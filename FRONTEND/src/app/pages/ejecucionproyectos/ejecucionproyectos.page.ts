@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { MenuController, NavController } from '@ionic/angular';
 import { Componente, Row } from '../../interfaces/interfaces';
 import { DataService } from '../../services/data.service';
 import pdfMake from 'pdfmake/build/pdfmake';
@@ -25,7 +25,8 @@ export class EjecucionproyectosPage implements OnInit {
 
   constructor(
     private menuCtrl: MenuController,
-    private dataservice: DataService
+    private dataservice: DataService,
+    private navCtrl: NavController
   ) { }
 
   ngOnInit() {
@@ -86,6 +87,10 @@ export class EjecucionproyectosPage implements OnInit {
     };
     this.pdfObj = pdfMake.createPdf(dd);
     this.pdfObj.download();
+  }
+
+  aux() {
+    this.navCtrl.navigateRoot('/estado');
   }
 
 }
