@@ -1,15 +1,23 @@
 <app-header titulo="Periodo Ejecución 2020"></app-header>
 
+
+
 <ion-content>
     <ion-item mode="ios" color="success" *ngFor="let c of countaprobados">
         <ion-label>Aprobados</ion-label>
         <ion-badge slot="end" color="success">{{c}}</ion-badge>
+        <ion-button color="success" (click)="BotonListar(1)"><img src="https://img.icons8.com/pastel-glyph/30/000000/search--v1.png" /></ion-button>
     </ion-item>
     <ion-item mode="ios" color="tertiary" *ngFor="let c of countejecucion">
         <ion-label>Ejecución</ion-label>
         <ion-badge slot="end" color="tertiary">{{c}}</ion-badge>
+        <ion-button color="tertiary" (click)="BotonListar(2)"><img src="https://img.icons8.com/pastel-glyph/30/000000/search--v1.png" /></ion-button>
     </ion-item>
-
+    <ion-item mode="ios" color="light">
+        <ion-label>Todos</ion-label>
+        <ion-badge slot="end" color="light">_ </ion-badge>
+        <ion-button color="light" (click)="BotonListar(3)"><img src="https://img.icons8.com/pastel-glyph/30/000000/search--v1.png" /></ion-button>
+    </ion-item>
     <ion-list>
         <ion-item>
             <ion-label text-center>

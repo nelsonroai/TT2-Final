@@ -45,6 +45,23 @@ export class ListainiciativasPage implements OnInit {
       this.countaprobados.push(resp.proyectos.count);
     });
   }
+  BotonListar(aux) {
+    this.proye = [];
+    if (aux === 2) {
+      this.dataservice.getIniciativasEjecucion()
+    .subscribe(resp  => {
+      console.log('listiniciativasejecucion', resp);
+      this.proye.push(...resp.proyectos.rows);
+    });
+    }
+    if (aux === 3) {
+      this.dataservice.getIniciativas()
+    .subscribe(resp  => {
+      console.log('listiniciativas', resp);
+      this.proye.push(...resp.proyectos.rows);
+    });
+    }
+  }
   generatePDF(codigoproyecto, nombreproyecto, codigoestado) {
     alert('pdf generado');
     if (codigoestado === 5) {

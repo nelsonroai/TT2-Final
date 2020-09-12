@@ -22,6 +22,7 @@ export class ListaextensionPage implements OnInit {
   codigoproyecto: any;
   codigoestado: any;
   nombreproyecto: any;
+  aux: any;
 
   constructor(
     private menuCtrl: MenuController,
@@ -44,6 +45,23 @@ export class ListaextensionPage implements OnInit {
       console.log('countextensionaprobados', resp);
       this.countaprobados.push(resp.proyectos.count);
     });
+  }
+  BotonListar(aux) {
+    this.proye = [];
+    if (aux === 2) {
+      this.dataservice.getExtensionEjecucion()
+    .subscribe(resp  => {
+      console.log('listextensionejecucion', resp);
+      this.proye.push(...resp.proyectos.rows);
+    });
+    }
+    if (aux === 3) {
+      this.dataservice.getExtension()
+    .subscribe(resp  => {
+      console.log('listextension', resp);
+      this.proye.push(...resp.proyectos.rows);
+    });
+    }
   }
   generatePDF(codigoproyecto, nombreproyecto, codigoestado) {
     alert('pdf generado');
