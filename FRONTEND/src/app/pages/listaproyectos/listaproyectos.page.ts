@@ -45,7 +45,23 @@ export class ListaproyectosPage implements OnInit {
       console.log('countproyectosaprobados', resp);
       this.countaprobados.push(resp.proyectos.count);
     });
-
+  }
+  BotonListar(aux) {
+    this.proye = [];
+    if (aux === 2) {
+      this.dataservice.getProyectosEjecucion()
+    .subscribe(resp  => {
+      console.log('listproyectosejecucion', resp);
+      this.proye.push(...resp.proyectos.rows);
+    });
+    }
+    if (aux === 3) {
+      this.dataservice.getProyectos()
+    .subscribe(resp  => {
+      console.log('listproyectos', resp);
+      this.proye.push(...resp.proyectos.rows);
+    });
+    }
   }
   generatePDF(codigoproyecto, nombreproyecto, codigoestado) {
     alert('pdf generado');

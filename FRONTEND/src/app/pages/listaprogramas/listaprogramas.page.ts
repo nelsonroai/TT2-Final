@@ -45,6 +45,23 @@ export class ListaprogramasPage implements OnInit {
       this.countaprobados.push(resp.proyectos.count);
     });
   }
+  BotonListar(aux) {
+    this.proye = [];
+    if (aux === 2) {
+      this.dataservice.getProgramasEjecucion()
+    .subscribe(resp  => {
+      console.log('listprogramasejecucion', resp);
+      this.proye.push(...resp.proyectos.rows);
+    });
+    }
+    if (aux === 3) {
+      this.dataservice.getProgramas()
+    .subscribe(resp  => {
+      console.log('listprogramas', resp);
+      this.proye.push(...resp.proyectos.rows);
+    });
+    }
+  }
   generatePDF(codigoproyecto, nombreproyecto, codigoestado) {
     alert('pdf generado');
     if (codigoestado === 5) {
